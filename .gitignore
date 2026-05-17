@@ -1,0 +1,17 @@
+# Wrangler 本地缓存
+.wrangler/
+node_modules/
+dist/
+
+# 真实 secrets（绝不能 commit）
+.dev.vars
+.env
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# 日志
+*.log

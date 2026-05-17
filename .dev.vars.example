@@ -1,0 +1,7 @@
+# 本文件供 Cloudflare 一键部署向导识别需要哪些 Secret
+# 部署时 Cloudflare 会读取本文件，引导用户为每个 Secret 填入实际值
+# 真实的 Secret 永远不会出现在仓库里（这只是个模板）
+
+# 注册机访问 Worker 时使用的共享密钥
+# 建议生成 32 位以上的随机字符串：openssl rand -hex 32
+SHARED_TOKEN=change-me-to-a-strong-random-token

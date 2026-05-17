@@ -1,0 +1,16 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "deepseek-mail"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+# KV 命名空间用于存储「邮箱 -> 验证码」的临时映射
+# 一键部署时，下面的占位符 ID 会被 Cloudflare 部署向导自动替换为新建的 KV ID
+# 手动 wrangler deploy 前需要先 `wrangler kv namespace create "KV_CODES"` 并把 id 填上
+[[kv_namespaces]]
+binding = "KV_CODES"
+id = "<KV_NAMESPACE_ID>"
+
+# SHARED_TOKEN 是 Secret，不在 wrangler.toml 中声明
+# 部署向导会从同目录的 .dev.vars.example 读取需要的 Secret 列表并提示输入
+# 手动部署：wrangler secret put SHARED_TOKEN
