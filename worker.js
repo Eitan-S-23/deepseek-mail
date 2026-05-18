@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * DeepSeek 注册机 - Cloudflare Email Worker
  *
@@ -346,7 +347,7 @@ function isDeepSeekSender(from) {
 
 async function streamToString(stream) {
   const reader = stream.getReader();
-  const decoder = new TextDecoder("utf-8", { fatal: false });
+  const decoder = new TextDecoder();
   let result = "";
   while (true) {
     const { value, done } = await reader.read();

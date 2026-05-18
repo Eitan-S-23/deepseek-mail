@@ -9,7 +9,7 @@ workers_dev = true
 # 手动 wrangler deploy 前需要先 `wrangler kv namespace create "KV_CODES"` 并把 id 填上
 [[kv_namespaces]]
 binding = "KV_CODES"
-id = "<KV_NAMESPACE_ID>"
+id = "0c5e5950abb3406ab7c1e1249d2e41d4"
 
 # SHARED_TOKEN 是 Secret，不在 wrangler.toml 中声明
 # 部署向导会从同目录的 .dev.vars.example 读取需要的 Secret 列表并提示输入
